@@ -8,6 +8,7 @@ Vagrant.configure(2) do |config|
 			node1_config.vm.host_name = "node1"
 			node1_config.vm.network "private_network", ip:"10.230.168.100"
 			node1_config.vm.provider :virtualbox do |vb|
+				vb.gui = true
 				vb.customize ["modifyvm", :id, "--memory", "1024"]
 				vb.customize ["modifyvm", :id, "--cpus", "1"]
 			end
@@ -17,6 +18,7 @@ Vagrant.configure(2) do |config|
 			node2_config.vm.host_name = "node2"
 			node2_config.vm.network "private_network", ip:"10.230.168.101"
 			node2_config.vm.provider :virtualbox do |vb|
+				vb.gui = true
 				vb.customize ["modifyvm", :id, "--memory", "1024"]
 				vb.customize ["modifyvm", :id, "--cpus", "1"]
 			end
